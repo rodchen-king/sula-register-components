@@ -2,7 +2,7 @@
  * @Description:
  * @Author: rodchen
  * @Date: 2020-10-29 00:09:15
- * @LastEditTime: 2020-10-29 01:11:38
+ * @LastEditTime: 2020-10-31 12:44:24
  * @LastEditors: rodchen
  */
 import { defineConfig } from 'dumi';
@@ -17,4 +17,7 @@ export default {
   mode: 'site',
   // more config: https://d.umijs.org/config
   sula: {},
+  history: {
+    type: 'hash'
+  }
 };
