@@ -1,6 +1,6 @@
 {
   "name": "sula-register-components",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "基于sula注册的业务组件",
   "scripts": {
     "start": "dumi dev",
@@ -40,6 +40,7 @@
     "lodash": "^4.17.20",
     "react": "^16.12.0",
     "sula": "^1.0.0-beta.10",
+    "sula-register-components": "^0.0.3",
     "umi-plugin-sula": "^1.0.0-beta.1"
   },
   "devDependencies": {
