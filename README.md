@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-Install dependencies,
+[文档地址](https://rodchen-king.github.io/sula-register-components/#/components/edit-table)
 
 ```bash
 $ npm i --save sula-register-components
