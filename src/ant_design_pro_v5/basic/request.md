@@ -13,7 +13,7 @@ order: 5
 
 ## <span style="font-size:18px; color: #4569d4">配置 app.tsx 文件</span>
 
-```
+```js
 export const request: RequestConfig = {
   errorHandler,
   requestInterceptors,
@@ -22,7 +22,7 @@ export const request: RequestConfig = {
 
 ### <span style="font-size:16px; color: #EB2F96">错误处理和请求拦截</span>
 
-```
+```js
 /**
  * 异常处理程序
  */

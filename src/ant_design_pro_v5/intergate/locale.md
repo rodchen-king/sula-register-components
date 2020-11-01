@@ -19,7 +19,7 @@ order: 0
 
 ### <span style="font-size:16px;color:#EB2F96;">config.ts sula 配置添加 locale</span>
 
-```
+```js
 sula: {
     locale: {
       default: 'zh-CN',
@@ -31,7 +31,7 @@ sula: {
 
 ### <span style="font-size:16px;color:#EB2F96;">新增 src/components/access/index.js</span>
 
-```
+```js
 /* eslint-disable import/no-unresolved */
 import React from 'react';
 import { useModel, useIntl, history, getLocale } from 'umi';
@@ -51,7 +51,11 @@ export default Com => {
         history={history}
         locale={getLocale() === 'zh-CN' ? zhCN : enUS}
       >
-        <Com currentUser={currentUser} formatMessage={formatMessage} {...props} />
+        <Com
+          currentUser={currentUser}
+          formatMessage={formatMessage}
+          {...props}
+        />
       </ConfigProvider>
     );
   };
@@ -67,12 +71,12 @@ export default Com => {
 
 这里的两个文件基础是从 sula 源码里复制出来的：
 
-```
+```js
 import zhCN from '@/locales/zh-CN/sula';
 import enUS from '@/locales/en-US/sula';
 ```
 
-```
+```js
 export default {
   saveText: '保存',
   submitText: '提交',
@@ -95,7 +99,7 @@ export default {
 
 ### <span style="font-size:16px;color:#EB2F96;">业务 json 使用</span>
 
-```
+```js
     fields: [
       {
         name: 'name',
@@ -107,8 +111,8 @@ export default {
 
 ### <span style="font-size:16px;color:#EB2F96;">业务组件全部代码</span>
 
-```
-const Normatble = (props) => {
+```js
+const Normatble = props => {
   const [formType, setFormType] = React.useState('modalForm');
   const format = props.formatMessage;
   const config = {

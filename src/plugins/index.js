@@ -2,15 +2,37 @@
  * @Description:
  * @Author: rodchen
  * @Date: 2020-10-28 10:16:11
- * @LastEditTime: 2020-11-01 16:09:16
+ * @LastEditTime: 2020-11-01 21:57:41
  * @LastEditors: rodchen
  */
-import * as sula from 'sula';
-import { EditTable } from 'sula-register-components';
-
-const { registerFieldPlugin } = sula;
+import { registerFieldPlugin } from 'sula';
+import sula from 'sula/es/core';
+import EditTable from '../components/EditTable';
 
 /** render插件 */
 
 /** field插件 */
-registerFieldPlugin('editTable')(EditTable);
+registerFieldPlugin('editTable')(EditTable, true, true);
+
+sula.validatorType('edit-table', ctx => {
+  const { value, name } = ctx || {};
+
+  if (!value) {
+    return Promise.resolve();
+  }
+
+  const ErrorArray = [];
+  value.forEach((row, index) => {
+    Object.keys(row).forEach(cell => {
+      if (!row[cell]) {
+        ErrorArray.push(`第${index + 1}条数据不正确`);
+      }
+    });
+  });
+
+  if (ErrorArray.length) {
+    return Promise.reject(ErrorArray[0]);
+  }
+
+  return Promise.resolve();
+});

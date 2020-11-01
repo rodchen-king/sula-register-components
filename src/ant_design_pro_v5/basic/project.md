@@ -13,7 +13,7 @@ order: 0
 
 ## <span style="font-size:18px; color: #4569d4">项目搭建过程</span>
 
-```
+```bash
 $ yarn create umi my-app
 
 Select the boilerplate type: 选择 Ant Design Pro

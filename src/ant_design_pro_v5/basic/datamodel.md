@@ -20,13 +20,13 @@ order: 3
 
 ### <span style="font-size:16px; color: #EB2F96">插件</span>
 
-```
+```bash
 @umijs/plugin-initial-state
 ```
 
 ### <span style="font-size:16px; color: #EB2F96">如何使用</span>
 
-```
+```js
 // src/app.ts
 export async function getInitialState() {
   return {
@@ -41,20 +41,20 @@ export async function getInitialState() {
 
 在 src/models 目录下新建文件，文件名会成为 model 的 namespace. 允许使用 ts, js, tsx(不推荐), jsx(不推荐) 四种后缀
 
-```
+```js
 import { useState, useCallback } from 'react';
 export default () => {
   const [counter, setCounter] = useState(0);
-  const increment = useCallback(() => setCounter((c) => c + 1), []);
-  const decrement = useCallback(() => setCounter((c) => c - 1), []);
-  debugger
+  const increment = useCallback(() => setCounter(c => c + 1), []);
+  const decrement = useCallback(() => setCounter(c => c - 1), []);
+  debugger;
   return { counter, increment, decrement };
 };
 ```
 
 ### <span style="font-size:16px; color: #EB2F96">使用</span>
 
-```
+```js
 const useAuthModel = useModel('useAuthModel');
 ```
 

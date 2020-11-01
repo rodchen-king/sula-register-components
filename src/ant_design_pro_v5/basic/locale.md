@@ -17,8 +17,8 @@ order: 5
 
 ### <span style="font-size:16px; color: #EB2F96">使用</span>
 
-```
+```js
 const format = props.formatMessage;
 
-format({ id: 'event.name' })
+format({ id: 'event.name' });
 ```

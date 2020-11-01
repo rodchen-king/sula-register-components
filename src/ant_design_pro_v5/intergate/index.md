@@ -13,7 +13,7 @@ order: 0
 
 ### <span style="font-size:16px;color:#EB2F96;">安装插件</span>
 
-```
+```bash
 npm i sula umi-plugin-sula --save
 ```
 
@@ -21,6 +21,6 @@ npm i sula umi-plugin-sula --save
 
 配置 config 文件，添加 sula 配置，需要先安装插件
 
-```
+```js
   sula: {},
 ```

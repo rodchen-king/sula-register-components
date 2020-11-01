@@ -2,7 +2,7 @@
  * @Description:
  * @Author: rodchen
  * @Date: 2020-10-28 15:41:58
- * @LastEditTime: 2020-10-29 17:22:45
+ * @LastEditTime: 2020-11-01 22:07:57
  * @LastEditors: rodchen
  */
 
@@ -141,7 +141,16 @@ class EditableTable extends React.Component {
             render: (undefined: undefined, record: any) =>
               this.state.dataSource.length >= 1 ? (
                 <Popconfirm
-                  title="Sure to delete?"
+                  title={
+                    props.formatMessage &&
+                    props.formatMessage({
+                      id: 'sula-component.edit-table.delete',
+                    })
+                      ? props.formatMessage({
+                          id: 'sula-component.edit-table.delete',
+                        })
+                      : '确认是否删除？'
+                  }
                   onConfirm={() => this.handleDelete(record.key)}
                 >
                   <a>

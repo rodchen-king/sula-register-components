@@ -15,14 +15,14 @@ sula 的请求和 umijs 的不是同一套体系，内置的接口请求。所�
 
 ## <span style="font-size:18px; color: #4569d4">创建 sula-config.js</span>
 
-```
+```js
 import { request as sulaRequest } from 'sula';
 
 // sula的请求配置
 sulaRequest.use({
-  bizRequestAdapter: (requestConfig) => {
+  bizRequestAdapter: requestConfig => {
     // eslint-disable-next-line no-param-reassign
-    requestConfig.url = `https://www.easy-mock.com/mock/5f9e6df90bf9ee0300940a04${ requestConfig.url}`
+    requestConfig.url = `https://www.easy-mock.com/mock/5f9e6df90bf9ee0300940a04${requestConfig.url}`;
     return requestConfig;
   },
 });
@@ -30,6 +30,6 @@ sulaRequest.use({
 
 ### <span style="font-size:16px; color: #EB2F96">app.ts 引入文件</span>
 
-```
-import './sula-config'
+```js
+import './sula-config';
 ```

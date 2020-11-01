@@ -15,7 +15,7 @@ order: 4
 
 ### <span style="font-size:16px;color:#EB2F96;">mock 数据</span>
 
-```
+```js
 'GET /api/user/fetchUserMenuAuth': (req: Request, res: Response) => {
     access = '';
     res.send([{code: 'admin', path: '/admin'}, {code: 'sub-page', path: '/admin/sub-page'}, {code: 'list', path: '/list'}]);
@@ -24,12 +24,12 @@ order: 4
 
 ### <span style="font-size:16px;color:#EB2F96;">修改 app.tsx 文件，增加一个 userMenuAuth 字段</span>
 
-```
+```js
 export async function getInitialState(): Promise<{
-  settings?: LayoutSettings;
-  currentUser?: API.CurrentUser;
-  fetchUserInfo: () => Promise<API.CurrentUser | undefined>;
-  userMenuAuth?: API.AuthMenuData[];
+  settings?: LayoutSettings,
+  currentUser?: API.CurrentUser,
+  fetchUserInfo: () => Promise<API.CurrentUser | undefined>,
+  userMenuAuth?: API.AuthMenuData[],
 }> {
   // 获取用户信息
   const fetchUserInfo = async () => {
@@ -71,22 +71,25 @@ export async function getInitialState(): Promise<{
 
 ### <span style="font-size:16px;color:#EB2F96;">修改 access.ts 文件</span>
 
-```
+```js
 // src/access.ts
-export default function access(initialState: { userMenuAuth?: API.AuthMenuData[] }) {
+export default function access(initialState: {
+  userMenuAuth?: API.AuthMenuData[],
+}) {
   const { userMenuAuth } = initialState || {};
   return {
-    canAdmin: (route: API.Route) =>  canAdmin(route, userMenuAuth)
+    canAdmin: (route: API.Route) => canAdmin(route, userMenuAuth),
   };
 }
 function canAdmin(route: API.Route, userMenuAuth?: API.AuthMenuData[]) {
-  return !!userMenuAuth?.filter((item: API.Route) => item.code === route.code).length
+  return !!userMenuAuth?.filter((item: API.Route) => item.code === route.code)
+    .length;
 }
 ```
 
 ### <span style="font-size:16px;color:#EB2F96;">路由文件使用 access: 'canAdmin'</span>
 
-```
+```js
 {
   path: '/admin',
   name: 'admin',

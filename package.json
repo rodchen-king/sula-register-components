@@ -1,6 +1,6 @@
 {
   "name": "sula-register-components",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "基于sula注册的业务组件",
   "scripts": {
     "start": "dumi dev",
