@@ -27,6 +27,15 @@ order: 0
 
 <br>
 
-Pro V5 中的架构做了全新的改动，全部修改为全新的 umi@3 架构, 对于数据流，权限，布局都进行了内置，修改为了全新的插件。这些改进都是渐进式的，只要你升级为 umi@3 ，是可以兼容两种开发模式的
+Pro V5 中的架构做了全新的改动，全部修改为全新的 [umi@3](https://umijs.org/zh-CN/plugins/api) 架构, 对于数据流，权限，布局都进行了内置，修改为了全新的插件。这些改进都是渐进式的，只要你升级为 umi@3 ，是可以兼容两种开发模式的
+
+### 内置插件
+
+- @umijs/plugin-initial-state ：初始数据处理
+- @umijs/plugin-model ：数据状态管理
+- @umijs/plugin-layout：布局配置
+- @umijs/plugin-access：权限控制
+
+<br>
 
 具体可以看一下 [文章介绍](https://github.com/ant-design/ant-design-pro/issues/6605)
