@@ -21,7 +21,7 @@ registerFieldPlugin('editTable')(EditTable, true, true);
 
 ## <span style="font-size:18px; color: #4569d4">介绍</span>
 
-描述: sula 体系内注册组件，直接在 sula json 内部使用
+描述: sula 体系内注册组件，直接在 sula json 内部使用。同时适配 form 的 mode 属性
 
 ```tsx
 import React from 'react';

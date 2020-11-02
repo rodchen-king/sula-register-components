@@ -1,6 +1,6 @@
 ---
 hero:
-  title: sula-components
+  title: sula-register-components
   desc: 基于sula的业务组件封装
   actions:
     - text: 立即开始
@@ -18,4 +18,4 @@ features:
 footer: Open-source MIT Licensed | Copyright © 2020<br />Powered by [dumi](https://d.umijs.org)
 ---
 
-## Hello sula-components!
+## Hello sula-register-components!

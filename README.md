@@ -1,4 +1,4 @@
-# sula-components
+# sula-register-components
 
 ## Getting Started
 
