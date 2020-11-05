@@ -2,7 +2,7 @@
 nav:
   title: '插件'
 group:
-  title: field 插件
+  title: render 插件
   order: 2
 title: EditTable
 order: 0
