@@ -2,12 +2,23 @@
  * @Description:
  * @Author: rodchen
  * @Date: 2020-10-28 10:16:11
- * @LastEditTime: 2020-11-01 21:57:41
+ * @LastEditTime: 2020-11-16 21:04:01
  * @LastEditors: rodchen
  */
-import { registerFieldPlugin } from 'sula';
+import { registerFieldPlugin, request } from 'sula';
 import sula from 'sula/es/core';
 import EditTable from '../components/EditTable';
+
+// config 配置
+request.use({
+  bizRequestAdapter(requestConfig) {
+    debugger;
+    requestConfig.headers = {
+      'x-tenant-id': '2',
+    };
+    return requestConfig;
+  },
+});
 
 /** render插件 */
 

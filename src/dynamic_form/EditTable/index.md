@@ -1,6 +1,7 @@
 ---
 nav:
   title: '动态表单'
+  order: 3
 group:
   title: 动态表单
   order: 3

@@ -1,6 +1,7 @@
 ---
 nav:
   title: '插件'
+  order: 2
 group:
   title: field 插件
   order: 2
